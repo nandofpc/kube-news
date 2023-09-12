@@ -20,5 +20,5 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            nandofpc/aulagitactions:${{github.run_number}}
+            nandofpc/aulagitactions:v${{github.run_number}}
             nandofpc/aulagitactions:latest
