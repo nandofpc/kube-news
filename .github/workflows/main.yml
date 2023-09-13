@@ -22,3 +22,12 @@ jobs:
           tags: |
             nandofpc/aulagitactions:v${{github.run_number}}
             nandofpc/aulagitactions:latest
+  CD:
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v4.0.0
+     - name: Azure Kubernetes set context
+       uses: Azure/aks-set-context@v3
+       with:
+         method: kubeconfig
+         kubeconfig: ${{secrets.K8S_CONFIG}}
